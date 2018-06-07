@@ -77,5 +77,3 @@ export const injectMethods = (RealComponent) => {
   }
 }
 ```
-
-### 3、
