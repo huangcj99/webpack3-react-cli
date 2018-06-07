@@ -1,0 +1,7 @@
+build/*.js
+node_modules/**/*.js
+src/script_components/**/*.js
+webpack/**/*.js
+src/components/**
+src/libs/**
+src/plugin/**

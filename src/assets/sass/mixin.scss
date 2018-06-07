@@ -1,0 +1,45 @@
+@mixin testMixin() {
+  text-align: center;
+  color: white;
+  background-color: black;
+}
+
+/* 用于修改input placeholder颜色、字体大小与偏移 */
+@mixin setPlaceholderParams($color: black, $size: 16px, $left: 0) {
+  &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: $color;
+    font-size: $size;
+    position: relative;
+    left: $left;
+  }
+
+  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: $color;
+    font-size: $size;
+    position: relative;
+    left: $left;
+  }
+
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: $color;
+    font-size: $size;
+    position: relative;
+    left: $left;
+  }
+
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $color;
+    font-size: $size;
+    position: relative;
+    left: $left;
+  }
+}
+
+/* 设置背景图片 */
+@mixin setBackground($width, $height, $url, $size: contain) {
+  display: inline-block;
+  width: $width;
+  height: $height;
+  background: url($url) no-repeat;
+  background-size: $size;
+}
