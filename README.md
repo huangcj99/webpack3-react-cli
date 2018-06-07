@@ -7,11 +7,11 @@ npm install
 npm run start
 ```
 
-## 二、组件树服务注入
+## 二、组件树服务注入
 
 ### 1、顶层注入全局方法
 ```
-// src/test/test.js
+/* src/test/test.js */
 
 // 设置Provider的函数
 import { setProvider } from 'provider'
@@ -29,7 +29,7 @@ render(
   document.getElementById('app')
 )
 
-// src/provider/index.js
+/* src/provider/index.js */
 
 export const setProvider = (RootComponent, providers) => {
   return (
@@ -43,7 +43,7 @@ export const setProvider = (RootComponent, providers) => {
 
 ### 2、子组件中注入providers中注册的方法
 ```
-// src/test/components/test-provider.jsx
+/* src/test/components/test-provider.jsx */
 
 import { injectMethods } from 'provider'
 
@@ -54,7 +54,7 @@ export default class TestProvider extends Component {
     let { $dateFormat } = this.props;
 
     return (
-      <div>
+      <div> 
         <p>test-provider</p>
         <p>{ $dateFormat(new Date()) }</p>
       </div>
@@ -62,7 +62,7 @@ export default class TestProvider extends Component {
   }
 }
 
-// src/provider/index.js
+/* src/provider/index.js */
 
 export const injectMethods = (RealComponent) => {
   return class extends Component {
